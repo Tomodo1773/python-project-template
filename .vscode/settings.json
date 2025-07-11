@@ -12,8 +12,23 @@
 		"editor.tabSize": 4,
 		"editor.defaultFormatter": "charliermarsh.ruff"
 	},
-  "ruff.lineLength": 127,
+	"ruff.lineLength": 127,
 	"[toml]": {
 		"editor.defaultFormatter": "tamasfe.even-better-toml"
-	}
+	},
+	"github.copilot.chat.commitMessageGeneration.instructions": [
+		//コミットメッセージ生成の設定です。
+		{
+			"text": "Conventional Commit形式を利用: type(scope): description"
+		},
+		{
+			"text": "タイプ: feat, fix, docs, style, refactor, perf, test, build, ci, chore"
+		},
+		{
+			"text": "要約は50文字以内の日本語で記入する"
+		},
+		{
+			"text": "命令形を使用"
+		}
+	]
 }
