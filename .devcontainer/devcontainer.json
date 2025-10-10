@@ -68,7 +68,9 @@
 				"GitHub.copilot",
 				"eamodio.gitlens",
 				"openai.chatgpt",
-				"Anthropic.claude-code"
+				"Anthropic.claude-code",
+				"oderwat.indent-rainbow",
+				"DavidAnson.vscode-markdownlint"
 			]
 		}
 	},
