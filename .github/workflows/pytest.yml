@@ -1,0 +1,32 @@
+name: pytest
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: node:20-bookworm
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv and Python
+        id: setup-uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.0"
+          python-version: "3.13"
+
+      - name: Sync dependencies
+        run: uv sync --frozen
+
+      - name: Run pytest (parallel)
+        run: uv run pytest -n auto
