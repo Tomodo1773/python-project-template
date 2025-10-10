@@ -1,36 +1,82 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-  "name": "Python 3",
-  "dockerComposeFile": "compose.yaml",
-  "service": "app",
-  "workspaceFolder": "/workspaces/workspace",
-  "features": {
-    "ghcr.io/va-h/devcontainers-features/uv:1": {
-      "version": "0.5.5"
-    },
-    "ghcr.io/devcontainers-contrib/features/npm-package:1": {
-      "package": "aicommits"
-    }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "charliermarsh.ruff",
-        "ms-python.mypy-type-checker",
-        "esbenp.prettier-vscode",
-        "tamasfe.even-better-toml",
-        "bierner.markdown-preview-github-styles",
-        "bierner.markdown-mermaid",
-        "hediet.vscode-drawio"
-      ]
-    }
-  },
-  "postCreateCommand": ".devcontainer/post_create.sh"
+	"name": "Python 3",
+	"dockerComposeFile": "compose.yaml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/workspace",
+	"features": {},
+	"forwardPorts": [51350],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.autoSave": "afterDelay",
+				"editor.renderWhitespace": "all",
+				"prettier.printWidth": 200,
+				"prettier.useTabs": true,
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"editor.formatOnSave": true,
+				"editor.formatOnPaste": true,
+				"[python]": {
+					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": "explicit",
+						"source.fixAll": "explicit"
+					}
+				},
+				"ruff.lineLength": 127,
+				"[markdown]": {
+					"editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+				},
+				"markdownlint.config": {
+					"default": true,
+					"MD018": false,
+					"MD034": false
+				},
+				"remote.extensionKind": {
+					"GitHub.copilot": ["ui"],
+					"GitHub.copilot-chat": ["ui"]
+				},
+				"github.copilot.chat.commitMessageGeneration.instructions": [
+					//コミットメッセージ生成の設定です。
+					{
+						"text": "Conventional Commit形式を利用: type(scope): description"
+					},
+					{
+						"text": "タイプ: feat, fix, docs, style, refactor, perf, test, build, ci, chore"
+					},
+					{
+						"text": "要約は50文字以内"
+					},
+					{
+						"text": "命令形を使用"
+					},
+					{
+						"text": "descriptionは日本語で書くこと"
+					}
+				]
+			},
+			"extensions": [
+				"charliermarsh.ruff",
+				"ms-python.mypy-type-checker",
+				"esbenp.prettier-vscode",
+				"tamasfe.even-better-toml",
+				"bierner.markdown-preview-github-styles",
+				"bierner.markdown-mermaid",
+				"hediet.vscode-drawio",
+				"GitHub.copilot-chat",
+				"GitHub.copilot",
+				"eamodio.gitlens",
+				"openai.chatgpt",
+				"Anthropic.claude-code"
+			]
+		}
+	},
+	"postCreateCommand": ".devcontainer/post_create.sh"
 
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
 
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }

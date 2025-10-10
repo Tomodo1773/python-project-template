@@ -1,6 +1,9 @@
 services:
   app:
-    image: mcr.microsoft.com/devcontainers/base:bookworm
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: python-project-template-dev
     command: sleep infinity
     volumes:
       - ..:/workspaces/workspace:cached
