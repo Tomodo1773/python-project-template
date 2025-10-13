@@ -5,5 +5,12 @@ services:
       dockerfile: Dockerfile
     image: python-project-template-dev
     command: sleep infinity
+    privileged: true
+    environment:
+      DOCKER_TLS_CERTDIR: ""
     volumes:
       - ..:/workspaces/workspace:cached
+      - dind-var-lib-docker:/var/lib/docker
+
+volumes:
+  dind-var-lib-docker:
