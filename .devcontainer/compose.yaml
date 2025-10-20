@@ -11,7 +11,7 @@ services:
     volumes:
       - ..:/workspaces/workspace:cached
       - dind-var-lib-docker:/var/lib/docker
-      - ${HOME}/.codex:${HOME}/.codex:cached
+      - ${HOME}/.codex:/home/vscode/.codex:cached
 
 volumes:
   dind-var-lib-docker:
