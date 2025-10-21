@@ -8,7 +8,6 @@ services:
     privileged: true
     environment:
       DOCKER_TLS_CERTDIR: ""
-      PYTHONPATH: /workspaces/workspace
     volumes:
       - ..:/workspaces/workspace:cached
       - ${HOME}/.gitconfig:/home/vscode/.gitconfig_host
