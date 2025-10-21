@@ -6,9 +6,9 @@
 	"service": "app",
 	"workspaceFolder": "/workspaces/workspace",
 	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
-	"forwardPorts": [51350],
 	"customizations": {
 		"vscode": {
 			"settings": {

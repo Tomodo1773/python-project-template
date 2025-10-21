@@ -13,5 +13,8 @@ RUN chmod 755 /uv-installer.sh \
     && su - vscode -c "sh /uv-installer.sh" \
     && rm /uv-installer.sh
 
+# Install act for running GitHub Actions locally via Docker-in-Docker.
+RUN curl -sSL https://raw.githubusercontent.com/nektos/act/master/install.sh | bash -s -- -b /usr/local/bin
+
 # Ensure the installed binary is discoverable in the PATH for all subsequent users.
 ENV PATH="/home/vscode/.local/bin:${PATH}"
