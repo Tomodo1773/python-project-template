@@ -13,6 +13,7 @@ services:
       - ${HOME}/.gitconfig:/home/vscode/.gitconfig_host
       - dind-var-lib-docker:/var/lib/docker
       - ${HOME}/.codex:/home/vscode/.codex:cached
+      - ${HOME}/.config/gh:/home/vscode/.config/gh:cached
 
 volumes:
   dind-var-lib-docker:
