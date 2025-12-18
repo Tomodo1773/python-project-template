@@ -1,4 +1,1 @@
-パッケージ管理はuvでおこなっています
-
-- 新規パッケージを追加するときはpipやpoetryではなくuv add <パッケージ名>で追加してください。
-- pythonを実行するときはuv runで実行してください。
+When performing a code review, respond in Japanese.
