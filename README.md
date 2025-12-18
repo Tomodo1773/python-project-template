@@ -200,7 +200,7 @@ uv run pytest
 uv add requests
 
 # 開発用の依存関係
-uv add --dev black
+uv add --dev pytest-cov
 ```
 
 ### ローカルでCI/CDをテスト
