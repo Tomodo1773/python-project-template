@@ -13,6 +13,6 @@ repos:
       # Run the type checker.
       - id: ty
         name: ty
-        entry: ty check .
+        entry: uv run ty check .
         language: system
         pass_filenames: false

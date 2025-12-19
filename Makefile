@@ -8,4 +8,4 @@ act-pytest:
 	act -W .github/workflows/pytest.yml
 
 ty:
-	ty check .
+	uv run ty check .
