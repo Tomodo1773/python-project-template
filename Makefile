@@ -1,4 +1,4 @@
-.PHONY: all act-pytest ty
+.PHONY: all act-pytest check
 all: requirements.txt
 
 requirements.txt: uv.lock
@@ -7,5 +7,7 @@ requirements.txt: uv.lock
 act-pytest:
 	act -W .github/workflows/pytest.yml
 
-ty:
+check:
+	uv run ruff check .
+	uv run ruff format .
 	uv run ty check .
